@@ -29,16 +29,20 @@ class Route
             $controller_path = "app/$module/controller/$controller_file";
             $query = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
             parse_str($query, $parts);
-            echo $parts['id'];
+            $id = $parts['id'];
         }
-        var_dump($action_name);
         if (file_exists($controller_path)) {
             include $controller_path;
         } else {
             include 'app/404.php';
         }
-        $controller = new $controller_name;
+        if ($id){
+            $controller = new $controller_name($id);
+        }else {
+            $controller = new $controller_name;
+        }
         $action = $action_name;
+        $action = strtok($action,'?');
         if (method_exists($controller, $action)) {
             $controller->$action();
         } else {
