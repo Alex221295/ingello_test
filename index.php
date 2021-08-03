@@ -1,5 +1,5 @@
 <?php
-include 'app/user/route.php';
+include 'app/route.php';
 
 $run = new Route();
 $run->run();
