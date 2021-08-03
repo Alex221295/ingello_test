@@ -5,6 +5,7 @@ class Auth
 {
     public function createToken()
     {
-            echo 'токен';
+            echo 'токен создан';
     }
 }
+echo 'попал в auth.php';
