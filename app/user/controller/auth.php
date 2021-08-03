@@ -8,5 +8,3 @@ class Auth
             echo 'токен создан';
     }
 }
-echo 'попал в auth.php';
-//

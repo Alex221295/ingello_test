@@ -15,20 +15,23 @@ class Route
 ////            echo ($id);
 //
 //        } else
-            if (count($server) == 3) {
+        if (count($server) == 3) {
             $controller_name = $server[1];
             $action_name = $server[2];
             $controller_file = ($controller_name) . '.php';
-            $controller_path = "app/user/controller/$controller_file" ;
+            $controller_path = "app/user/controller/$controller_file";
 
-        } else{
+        } else {
             $module = $server[1];
             $controller_name = $server[2];
             $action_name = $server[3];
             $controller_file = ($controller_name) . '.php';
-            $controller_path = "app/$module/controller/$controller_file"  ;
+            $controller_path = "app/$module/controller/$controller_file";
+            $query = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
+            parse_str($query, $parts);
+            echo $parts['id'];
         }
-//        var_dump($controller_path);
+        var_dump($action_name);
         if (file_exists($controller_path)) {
             include $controller_path;
         } else {
