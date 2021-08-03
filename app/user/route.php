@@ -10,6 +10,7 @@ class Route
         $module = $server[1];
         $controller_name = $server[2];
         $action_name = $server[3];
+        var_dump($server);
 
         $controller_file = ($controller_name) . '.php';
         $controller_path = "app/user/controller/" . $controller_file;
