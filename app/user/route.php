@@ -11,18 +11,22 @@ class Route
             $action_name = $server[3];
             $controller_file = ($controller_name) . '.php';
             $controller_path = "app/store/controller/" . $controller_file;
-            var_dump($controller_path);
+            var_dump($_GET);
+
         } elseif (count($server) == 3) {
             $controller_name = $server[1];
             $action_name = $server[2];
-//            var_dump($controller_path);
+            $controller_file = ($controller_name) . '.php';
+            $controller_path = "app/user/controller/" . $controller_file;
+
         } elseif ($server['1'] == 'user') {
             $module = $server[1];
             $controller_name = $server[2];
             $action_name = $server[3];
+            $controller_file = ($controller_name) . '.php';
+            $controller_path = "app/user/controller/" . $controller_file;
         }
-        $controller_file = ($controller_name) . '.php';
-        $controller_path = "app/user/controller/" . $controller_file;
+//        var_dump($controller_path);
         if (file_exists($controller_path)) {
             include $controller_path;
         } else {
