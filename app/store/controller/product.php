@@ -3,8 +3,7 @@
 class Product
 {
     public function create(){
-        echo 'Подукт добавлен';
+        echo 'Продукт добавлен';
     }
 
 }
-echo 'добавлен';
