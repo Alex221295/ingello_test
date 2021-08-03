@@ -5,18 +5,18 @@ class Route
     public function run()
     {
         $server = explode('/', $_SERVER['REQUEST_URI']);
-        if($server['1']==='store'){
+        if ($server['1'] === 'store') {
             $module = $server[1];
             $controller_name = $server[2];
             $action_name = $server[3];
             $controller_file = ($controller_name) . '.php';
-            $controller_path = "app/user/controller/" . $controller_file;
-        }
-        if (count($server) == 3) {
+            $controller_path = "app/store/controller/" . $controller_file;
+            var_dump($controller_path);
+        } elseif (count($server) == 3) {
             $controller_name = $server[1];
             $action_name = $server[2];
 //            var_dump($controller_path);
-        }elseif($server['1']!=='store'){
+        } elseif ($server['1'] == 'user') {
             $module = $server[1];
             $controller_name = $server[2];
             $action_name = $server[3];
