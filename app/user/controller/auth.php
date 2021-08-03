@@ -9,3 +9,4 @@ class Auth
     }
 }
 echo 'попал в auth.php';
+//
