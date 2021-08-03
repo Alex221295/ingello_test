@@ -5,6 +5,9 @@ class Route
     public function run()
     {
         $server = explode('/', $_SERVER['REQUEST_URI']);
+        if($server['1']==='store'){
+            echo 'hii';
+        }
         if (count($server) == 3) {
             $controller_name = $server[1];
             $action_name = $server[2];
