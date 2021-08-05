@@ -3,7 +3,7 @@
 
 class Auth
 {
-    public function createToken()
+    public function action_createToken()
     {
             echo 'токен создан';
     }

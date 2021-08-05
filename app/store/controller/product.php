@@ -2,8 +2,8 @@
 
 class Product
 {
-    public function create($id){
-        echo "Продукт добавлен. id = $id";
+    public function action_create($id){
+        echo "GET параметр ". key($_GET) ." равен " . $_GET[key($_GET)] ;
 
     }
 

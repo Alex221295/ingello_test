@@ -3,7 +3,7 @@
 class Site
 {
 
-    public function contact()
+    public function action_contact()
     {
         echo 'есть контакт';
 
